@@ -1,14 +1,10 @@
-#设置tomcat服务端口号
 server:
-  port: 8080
-#设置服务名称
-spring:
-  application:
-    name: eureka-server1
+  port: 20002
 eureka:
   instance:
-    hostname: localhost
+    hostname: server2
   client:
-    fetch-registry: false
-    register-with-eureka: false
-    service-url: http://${eureka.instance.hostname}:${server.port}/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://server1:20001/eureka/
