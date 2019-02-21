@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class HelloController {
 
-    @Autowired
-    DiscoveryClient discoveryClient;
-
     @RequestMapping("/hello")
     public String hello(HttpServletRequest request) {
         return "hello,this is hello-service"+request.getLocalPort();
